@@ -1,0 +1,35 @@
+{
+  "name": "@colorfy-software/emittify",
+  "version": "0.0.1",
+  "description": "Tiny event library with caching",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colorfy-software/emittify.git"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "solid-js": "^1.4.2"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "author": "Kristjan Vool",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colorfy-software/emittify/issues"
+  },
+  "homepage": "https://github.com/colorfy-software/emittify#readme",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "solid-js": "^1.4.8"
+  }
+}
