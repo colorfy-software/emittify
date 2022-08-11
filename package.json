@@ -2,6 +2,7 @@
   "name": "@colorfy-software/emittify",
   "version": "0.0.1",
   "description": "Tiny event library with caching",
+  "private": false,
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
