@@ -7,5 +7,5 @@
     "outDir": "./dist",
     "moduleResolution": "node"
   },
-  "include": ["react/**/*", "solidjs/**/*"]
+  "include": ["src/**/*"]
 }
