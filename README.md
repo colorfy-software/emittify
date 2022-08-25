@@ -99,7 +99,7 @@ import Emittify from '@colorfy-software/emittify/react'
 ### For solidjs:
 
 ```typescript
-import Emittify from '@colorfy-software/emittify/solidjs'
+import Emittify from '@colorfy-software/emittify/solid'
 ```
 
 <br/>
