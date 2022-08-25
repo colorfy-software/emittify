@@ -33,6 +33,19 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
+    "release-it": "^15.4.0",
     "solid-js": "^1.4.8"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "[COLIB] - CHORE - release emittify v${version}",
+      "tagName": "${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    }
   }
 }
