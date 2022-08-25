@@ -1,6 +1,6 @@
 {
   "name": "@colorfy-software/emittify",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Tiny event library with caching",
   "private": false,
   "main": "dist/index.js",
