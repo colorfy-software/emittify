@@ -83,12 +83,27 @@ const cachedEvent = emitter.getCache('direct-message-count', 0) // Can provide s
 
 <br/>
 
-### Hooks
+### Testing with Jest
+
+If you don't already have a Jest setup file configured, please add the following to your [Jest configuration file](https://jestjs.io/docs/configuration) and create the new `jest.setup.js` file in project root:
+
+```js
+setupFiles: ['<rootDir>/jest.setup.js'];
+```
+
+You can then add the following line to that setup file to mock the `NativeModule.RNPermissions`:
+
+```js
+jest.mock('@colorfy-software/emittify', () => require('@colorfy-software/emittify/mock'));
+```
+
+
+## Hooks
 
 <br/>
 <br/>
 
-### For react:
+### For React:
 
 ```typescript
 import Emittify from '@colorfy-software/emittify/react'

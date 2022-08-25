@@ -19,7 +19,8 @@
   },
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "./mock.js"
   ],
   "author": "Kristjan Vool",
   "license": "MIT",
