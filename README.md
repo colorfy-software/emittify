@@ -1,10 +1,8 @@
-<!-- This is a read me for a tiny event emitter written in typescript. It supports caching and has hooks for react and solidjs -->
-
-# Emittify - A tiny event emitter
+# Emittify - a tiny event emitter
 
 This is a tiny event emitter written with first class typescript support.
 
-It supports caching and has hooks for react and solidjs.
+It supports caching and has hooks for React and Solid.
 <br/><br/>
 
 ## Installation
@@ -17,7 +15,7 @@ yarn add @colorfy-software/emittify
 
 <br/><br/>
 
-## Getting Started
+## Getting started
 
 <br/><br/>
 
@@ -111,7 +109,7 @@ import Emittify from '@colorfy-software/emittify/react'
 
 <br/>
 
-### For solidjs:
+### For Solid:
 
 ```typescript
 import Emittify from '@colorfy-software/emittify/solid'
@@ -119,7 +117,7 @@ import Emittify from '@colorfy-software/emittify/solid'
 
 <br/>
 
-### Usage
+## Usage
 
 <br/>
 
@@ -149,7 +147,7 @@ const Component = () => {
 <!-- clearAllCache -> emittify.clearAllCache() -> Clears all of the cache -->
 <!-- clear -> emittify.clear('event-name') -> Clears listeners for given event name -->
 
-## send
+### send
 
 <br/>
 
@@ -160,7 +158,7 @@ emittify.send('event-name', value)
 
 <br/>
 
-## listen
+### listen
 
 <br/>
 
@@ -176,7 +174,7 @@ listener.clearListener() // Clears the listener
 
 <br/>
 
-## useEventListener
+### useEventListener
 
 <br/>
 
@@ -187,7 +185,7 @@ emittify.useEventListener('event-name', initialValue)
 
 <br/>
 
-## getCache
+### getCache
 
 <br/>
 
@@ -198,7 +196,7 @@ emittify.getCache('event-name', initialValue)
 
 <br/>
 
-## clearCache
+### clearCache
 
 <br/>
 
@@ -209,7 +207,7 @@ emittify.clearCache('event-name')
 
 <br/>
 
-## clearAllCache
+### clearAllCache
 
 <br/>
 
