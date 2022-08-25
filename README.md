@@ -105,7 +105,7 @@ const Component = () => {
 }
 ```
 
-## All Methods on Emittify class
+## Methods
 
 ### send
 

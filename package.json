@@ -38,7 +38,7 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "[COLIB] - CHORE - release emittify v${version}",
+      "commitMessage": "[COLIB] - CHORE - release emittify ${version}",
       "tagName": "${version}"
     },
     "npm": {
