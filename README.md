@@ -1,27 +1,17 @@
 # Emittify - a tiny event emitter
 
-This is a tiny event emitter written with first class typescript support.
-
-It supports caching and has hooks for React and Solid.
-<br/><br/>
+This is a tiny event emitter written with first class Typescript support.
+It supports caching and has hooks for both React and Solid.
 
 ## Installation
-
-<br/>
 
 ```bash
 yarn add @colorfy-software/emittify
 ```
 
-<br/><br/>
-
 ## Getting started
 
-<br/><br/>
-
 ### Creating an Emitter with types
-
-<br/>
 
 ```typescript
 // events-core.ts
@@ -46,16 +36,11 @@ const emitter = new Emittify<EventsType>({
 export default emitter
 ```
 
-<br/>
-
 ### Sending and listening to events
-
-<br/>
 
 ```typescript
 // File where you want to use it
 import emitter from './events-core'
-
 
 // register a listener for the 'toast-notification' event
 emitter.listen('toast-notification', data => {
@@ -71,15 +56,12 @@ emitter.send('toast-notification', {
   type: 'success'
 }
 
-
 // emit the 'direct-message-count' event
 emitter.send('direct-message-count', 10)
 
 // get the cached event
 const cachedEvent = emitter.getCache('direct-message-count', 0) // Can provide second argument as default value if none is sent yet
 ```
-
-<br/>
 
 ### Testing with Jest
 
@@ -95,11 +77,7 @@ You can then add the following line to that setup file to mock the `NativeModule
 jest.mock('@colorfy-software/emittify', () => require('@colorfy-software/emittify/mock'));
 ```
 
-
 ## Hooks
-
-<br/>
-<br/>
 
 ### For React:
 
@@ -107,19 +85,13 @@ jest.mock('@colorfy-software/emittify', () => require('@colorfy-software/emittif
 import Emittify from '@colorfy-software/emittify/react'
 ```
 
-<br/>
-
 ### For Solid:
 
 ```typescript
 import Emittify from '@colorfy-software/emittify/solid'
 ```
 
-<br/>
-
 ## Usage
-
-<br/>
 
 ```tsx
 // import previously created emitter
@@ -133,34 +105,16 @@ const Component = () => {
 }
 ```
 
-<br/>
-
 ## All Methods on Emittify class
 
-<br/>
-
-<!-- send -> emittify.send('event-name', value) -> Sends an event with specified name and value -->
-<!-- listen -> emittify.listen('event-name', callback) -> Listens to events with specified name and triggers a callback on each event-->
-<!-- useEventListener -> emittify.useEventListener('event-name', initialValue) -> Emits an event with specified name and value. Returns cached value if one exists, otherwise returns initial value if that is provided -->
-<!-- getCache -> emittify.getCache('event-name', initialValue) -> Gets the cached value for event name -->
-<!-- clearCache -> emittify.clearCache('event-name') -> Clears cache for given event name -->
-<!-- clearAllCache -> emittify.clearAllCache() -> Clears all of the cache -->
-<!-- clear -> emittify.clear('event-name') -> Clears listeners for given event name -->
-
 ### send
-
-<br/>
 
 ```typescript
 // send an event with specified name and value
 emittify.send('event-name', value)
 ```
 
-<br/>
-
 ### listen
-
-<br/>
 
 ```typescript
 // listen to events with specified name and triggers a callback on each event
@@ -172,55 +126,35 @@ listener.event // Name of the event
 listener.clearListener() // Clears the listener
 ```
 
-<br/>
-
 ### useEventListener
-
-<br/>
 
 ```typescript
 // emits an event with specified name and value. Returns cached value if one exists, otherwise returns initial value if that is provided
 emittify.useEventListener('event-name', initialValue)
-```
-
-<br/>
+``
 
 ### getCache
-
-<br/>
 
 ```typescript
 // gets the cached value for event name
 emittify.getCache('event-name', initialValue)
 ```
 
-<br/>
-
 ### clearCache
-
-<br/>
 
 ```typescript
 // clears cache for given event name
 emittify.clearCache('event-name')
 ```
 
-<br/>
-
 ### clearAllCache
-
-<br/>
 
 ```typescript
 // clears all of the cache
 emittify.clearAllCache()
 ```
 
-<br/>
-
 ### clear
-
-<br/>
 
 ```typescript
 // clears listeners for given listener id
