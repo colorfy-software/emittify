@@ -28,13 +28,11 @@
     "url": "https://github.com/colorfy-software/emittify/issues"
   },
   "homepage": "https://github.com/colorfy-software/emittify#readme",
-  "dependencies": {
-    "typescript": "^4.7.4"
-  },
   "devDependencies": {
     "@types/react": "^18.0.17",
     "release-it": "^15.4.0",
-    "solid-js": "^1.4.8"
+    "solid-js": "^1.4.8",
+    "typescript": "^4.7.4"
   },
   "release-it": {
     "git": {
