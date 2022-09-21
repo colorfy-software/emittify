@@ -1,28 +1,46 @@
-# Emittify - a tiny event emitter
+<h1 align="center">
+  <a href="https://github.com/colorfy-software/emittify/" target="_blank" rel="noopener noreferrer">
+    🛩 Emittify
+  </a>
+</h1>
 
-This is a tiny event emitter written with first class Typescript support.
+<h4 align="center">
+  <strong>A tiny event emitter.</strong>
+</h4>
+
+<p align="center">
+  <a href="https://www.npmjs.org/package/@colorfy-software/emittify">
+    <img src="https://badge.fury.io/js/@colorfy-software%2Femittify.svg" alt="Current npm package version." />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  </a>
+</p>
+
+## 🎯 Purpose
+
+Emittify is a tiny event emitter written with first class Typescript support.
 It supports caching and has hooks for both React and Solid.
 
-## Installation
+## 🏗️ Installation
 
-```bash
+```sh
 yarn add @colorfy-software/emittify
 ```
 
-## Getting started
+## 💻 Usage
 
-### Creating an Emitter with types
+### 🆕 Creating an Emitter with types
 
-```typescript
+```ts
 // events-core.ts
 
-// import the emittify module
+// Import the emittify module.
 import Emittify from '@colorfy-software/emittify'
-// importing toast notification component props type to use in the emittify module
+// Importing toast notification component props type to use in the emittify module.
 import type { ToastNotificationPropsType } from '@components/ToastNotification'
 
-// Type for the emitter
-// key is the name of the event and value is the type of the event
+// Type for the emitter key is the name of the event and value is the type of the event.
 interface EventsType {
   'direct-message-count': number
   'toast-notification': ToastNotificationPropsType
@@ -36,34 +54,34 @@ const emitter = new Emittify<EventsType>({
 export default emitter
 ```
 
-### Sending and listening to events
+### 📧 Sending and listening to events
 
-```typescript
+```ts
 // File where you want to use it
 import emitter from './events-core'
 
-// register a listener for the 'toast-notification' event
+// Register a listener for the 'toast-notification' event.
 emitter.listen('toast-notification', data => {
   const { message, type } = data // All is typed and auto-completed
 
   console.log({ message, type })
 }
 
-// emit the 'toast-notification' event
-// All is typed and auto-completed
+// Emit the 'toast-notification' event.
+// All is typed and auto-completed.
 emitter.send('toast-notification', {
   message: 'Hello World',
   type: 'success'
 }
 
-// emit the 'direct-message-count' event
+// Emit the 'direct-message-count' event.
 emitter.send('direct-message-count', 10)
 
-// get the cached event
-const cachedEvent = emitter.getCache('direct-message-count', 0) // Can provide second argument as default value if none is sent yet
+// Get the cached event.
+const cachedEvent = emitter.getCache('direct-message-count', 0) // Can provide second argument as default value if none is sent yet.
 ```
 
-### Testing with Jest
+### 🧪 Testing with Jest
 
 If you don't already have a Jest setup file configured, please add the following to your [Jest configuration file](https://jestjs.io/docs/configuration) and create the new `jest.setup.js` file in project root:
 
@@ -77,21 +95,21 @@ You can then add the following line to that setup file to mock the `NativeModule
 jest.mock('@colorfy-software/emittify', () => require('@colorfy-software/emittify/mock'));
 ```
 
-## Hooks
+### 🪝 Hooks
 
-### For React:
+#### React
 
-```typescript
+```ts
 import Emittify from '@colorfy-software/emittify/react'
 ```
 
-### For Solid:
+#### Solid
 
-```typescript
+```ts
 import Emittify from '@colorfy-software/emittify/solid'
 ```
 
-## Usage
+#### Usage
 
 ```tsx
 // import previously created emitter
@@ -105,58 +123,66 @@ const Component = () => {
 }
 ```
 
-## Methods
+### 🗂 Methods
 
-### send
+#### `send()`
 
-```typescript
-// send an event with specified name and value
+```ts
+// Send an event with specified name and value.
 emittify.send('event-name', value)
 ```
 
-### listen
+#### `listen()`
 
-```typescript
-// listen to events with specified name and triggers a callback on each event
+```ts
+// Listen to events with specified name and triggers a callback on each event.
 const listener = emittify.listen('event-name', callback)
 
-// Listener is an object
+// Listener is an object.
 listener.id // Unique id for the listener
 listener.event // Name of the event
 listener.clearListener() // Clears the listener
 ```
 
-### useEventListener
+#### `useEventListener()`
 
-```typescript
-// emits an event with specified name and value. Returns cached value if one exists, otherwise returns initial value if that is provided
+```ts
+// Emits an event with specified name and value. Returns cached value if one exists, otherwise returns initial value if that is provided.
 emittify.useEventListener('event-name', initialValue)
-``
+```
 
-### getCache
+#### `getCache()`
 
-```typescript
-// gets the cached value for event name
+```ts
+// Gets the cached value for event name.
 emittify.getCache('event-name', initialValue)
 ```
 
-### clearCache
+#### `clearCache()`
 
-```typescript
-// clears cache for given event name
+```ts
+// Clears cache for given event name.
 emittify.clearCache('event-name')
 ```
 
-### clearAllCache
+#### `clearAllCache()`
 
-```typescript
-// clears all of the cache
+```ts
+// Clears all of the cache.
 emittify.clearAllCache()
 ```
 
-### clear
+#### `clear()`
 
-```typescript
-// clears listeners for given listener id
+```ts
+// Clears listeners for given listener id.
 emittify.clear('listener-id')
 ```
+
+## 💖 Code of Conduct
+
+This library has adopted a Code of Conduct that we expect project participants to adhere to. Please read the [full text](https://github.com/colorfy-software/localify/blob/master/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
+## 📰 License
+
+localify is licensed under the [MIT License](https://github.com/colorfy-software/localify/blob/master/LICENSE).
